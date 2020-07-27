@@ -75,7 +75,7 @@ export class DishdetailComponent implements OnInit {
     this.commentForm = this.fb.group({
       author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
       comment: ['', [Validators.required] ],
-      rating : '',
+      rating : 5,
       date:this.date
       
     });
@@ -113,7 +113,7 @@ export class DishdetailComponent implements OnInit {
     this.commentForm.reset({
       author: '',
       comment: '',
-      rating:'',
+      rating:5,
       date:this.date
       
     });
