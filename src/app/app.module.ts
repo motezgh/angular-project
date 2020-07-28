@@ -37,6 +37,9 @@ import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import {LeaderService} from './services/leader.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +66,7 @@ import {LeaderService} from './services/leader.service';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
@@ -80,7 +84,8 @@ import {LeaderService} from './services/leader.service';
   providers: [
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
     LoginComponent
