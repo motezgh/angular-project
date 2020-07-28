@@ -57,14 +57,14 @@
                 <mat-list-item *ngIf="this.commentForm.valid">
                     <p matLine>{{commentForm.value.comment}}</p>
                     <p matLine>{{commentForm.value.rating}} Stars</p>
-                    <p matLine>--{{commentForm.value.author}} </p>
+                    <p matLine>--{{commentForm.value.author}} {{date|date}} </p>
                   </mat-list-item>
                 
             </mat-list>
 
-            <form novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+            <form novalidate [formGroup]="commentForm"  (ngSubmit)="onSubmit()"> <!-- add in the form tag #cform="ngForm" if you add viewchild -->
                 <p>
-                  <mat-form-field class="half-width">
+                  <mat-form-field >
                     <input matInput formControlName="author" placeholder="Name" type="text" required>
                     <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
                   </mat-form-field>
@@ -78,12 +78,13 @@
                 
                 
                 <p>
-                  <mat-form-field class="full-width">
+                  <mat-form-field >
                     <textarea matInput formControlName="comment" placeholder="Your Comment"  required></textarea>
-                  </mat-form-field>
+                    <mat-error *ngIf="formErrors.author">{{formErrors.comment}}</mat-error>
+                </mat-form-field>
                 </p>
                 <button type="submit" mat-button class="background-primary text-floral-white"
-                [disabled]="commentForm.invalid" (click)="addComment()">Submit</button>
+                [disabled]="commentForm.invalid" >Submit</button>
               </form>
 
         </div>

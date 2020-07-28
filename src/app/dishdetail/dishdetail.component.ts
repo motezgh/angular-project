@@ -15,7 +15,7 @@ import { DISHES } from '../shared/dishes';
 })
 export class DishdetailComponent implements OnInit {
 
-  @ViewChild('cform') commentFormDirective;
+  //@ViewChild('cform') commentFormDirective;
 
   dish : Dish;  
   dishIds: string[];
@@ -75,8 +75,8 @@ export class DishdetailComponent implements OnInit {
     this.commentForm = this.fb.group({
       author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
       comment: ['', [Validators.required] ],
-      rating : 5,
-      date:this.date
+      rating : [5],
+      date: this.date
       
     });
 
@@ -110,20 +110,20 @@ export class DishdetailComponent implements OnInit {
   onSubmit() {
     this.commentaire = this.commentForm.value;
     console.log(this.commentaire);
+    this.dish.comments.push(this.commentForm.value);
     this.commentForm.reset({
       author: '',
       comment: '',
-      rating:5,
+      rating: 5 ,
       date:this.date
       
     });
-    this.commentFormDirective.resetForm();
+    //this.commentFormDirective.resetForm();
+    
   }
 
 
-  addComment(){
-    this.dish.comments.push(this.commentForm.value)
-  }
+  
 
 
   formatLabel(value: number) {
