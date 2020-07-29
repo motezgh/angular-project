@@ -62,7 +62,7 @@
                 
             </mat-list>
 
-            <form novalidate [formGroup]="commentForm"  (ngSubmit)="onSubmit()"> <!-- add in the form tag #cform="ngForm" if you add viewchild -->
+            <form novalidate [formGroup]="commentForm" #cform="ngForm"  (ngSubmit)="onSubmit()"> <!-- add in the form tag #cform="ngForm" if you add viewchild -->
                 <p>
                   <mat-form-field >
                     <input matInput formControlName="author" placeholder="Name" type="text" required>
