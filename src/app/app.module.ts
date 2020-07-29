@@ -40,6 +40,7 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,9 @@ import { baseURL } from './shared/baseurl';
     
     ContactComponent,
     
-    LoginComponent
+    LoginComponent,
+    
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

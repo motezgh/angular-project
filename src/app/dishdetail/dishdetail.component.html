@@ -65,7 +65,7 @@
             <form novalidate [formGroup]="commentForm" #cform="ngForm"  (ngSubmit)="onSubmit()"> <!-- add in the form tag #cform="ngForm" if you add viewchild -->
                 <p>
                   <mat-form-field >
-                    <input matInput formControlName="author" placeholder="Name" type="text" required>
+                    <input matInput formControlName="author" placeholder="Name" type="text" >
                     <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
                   </mat-form-field>
                   
@@ -79,7 +79,7 @@
                 
                 <p>
                   <mat-form-field >
-                    <textarea matInput formControlName="comment" placeholder="Your Comment"  required></textarea>
+                    <textarea matInput formControlName="comment" placeholder="Your Comment"  ></textarea>
                     <mat-error *ngIf="formErrors.author">{{formErrors.comment}}</mat-error>
                 </mat-form-field>
                 </p>

@@ -38,7 +38,7 @@ export class DishdetailComponent implements OnInit {
     'author': {
       'required':      'Name is required.',
       'minlength':     'Name must be at least 2 characters long.',
-      'maxlength':     'Name cannot be more than 25 characters long.'
+      
     },
     'comment': {
       'required':      'comment is required.'
@@ -78,7 +78,7 @@ export class DishdetailComponent implements OnInit {
     this.commentForm = this.fb.group({
       author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
       comment: ['', [Validators.required] ],
-      rating : [5],
+      rating : 5
       //date: this.date
       
     });
@@ -121,14 +121,15 @@ export class DishdetailComponent implements OnInit {
       },
       errmess => { this.dish = null ; this.dishcopy=null; this.errMess=<any>errmess;
       });
+    this.commentFormDirective.resetForm();
     this.commentForm.reset({
       author: '',
       comment: '',
-      rating: 5 ,
+      rating: 5 
       //date:this.date
       
     });
-    //this.commentFormDirective.resetForm();
+    
     
   }
 
