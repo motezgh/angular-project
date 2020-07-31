@@ -12,7 +12,7 @@ import { DISHES } from '../shared/dishes';
 import { baseURL } from '../shared/baseurl';
 import { Observable, of } from 'rxjs';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement } from '@angular/core'; //allows access to the DOM
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
